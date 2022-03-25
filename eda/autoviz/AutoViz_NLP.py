@@ -209,7 +209,7 @@ def remove_html(text):
     html=re.compile(r'<.*?>')
     return html.sub(r'',text)
 
-from autodsc.utils.sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
 # Convert Emojis to Text
 from autodsc.utils import emoji

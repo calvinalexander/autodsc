@@ -26,7 +26,7 @@ warnings.warn = warn
 ########################################
 import warnings
 warnings.filterwarnings("ignore")
-from autodsc.utils.sklearn.exceptions import DataConversionWarning
+from sklearn.exceptions import DataConversionWarning
 warnings.filterwarnings(action='ignore', category=DataConversionWarning)
 ####################################################################################
 import matplotlib
@@ -56,7 +56,7 @@ import traceback
 import xgboost as xgb
 from xgboost.sklearn import XGBClassifier
 from xgboost.sklearn import XGBRegressor
-from autodsc.utils.sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split
 ######## This is where we import HoloViews related libraries  #########
 import autodsc.utils.hvplot.pandas
 import holoviews as hv
@@ -1747,8 +1747,8 @@ def classify_columns(df_preds, verbose=0):
 #################################################################################
 from collections import Counter
 import time
-from autodsc.utils.sklearn.feature_selection import chi2, mutual_info_regression, mutual_info_classif
-from autodsc.utils.sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2, mutual_info_regression, mutual_info_classif
+from sklearn.feature_selection import SelectKBest
 ################################################################################
 from collections import defaultdict
 from collections import OrderedDict
@@ -1914,11 +1914,11 @@ def return_factorized_dict(ls):
 #################################################################################
 ################      Find top features using XGB     ###################
 #################################################################################
-from autodsc.utils.sklearn.model_selection import KFold
-from autodsc.utils.sklearn.model_selection import GridSearchCV
-from autodsc.utils.sklearn.multioutput import MultiOutputClassifier
+from sklearn.model_selection import KFold
+from sklearn.model_selection import GridSearchCV
+from sklearn.multioutput import MultiOutputClassifier
 import copy
-from autodsc.utils.sklearn.multiclass import OneVsRestClassifier
+from sklearn.multiclass import OneVsRestClassifier
 from collections import OrderedDict
 ################################################################################
 ###########################################################################################

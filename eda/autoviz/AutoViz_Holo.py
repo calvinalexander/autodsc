@@ -21,7 +21,7 @@ from bokeh.util.warnings import BokehUserWarning
 import warnings 
 warnings.simplefilter(action='ignore', category=BokehUserWarning)
 warnings.filterwarnings("ignore")
-from autodsc.utils.sklearn.exceptions import DataConversionWarning
+from sklearn.exceptions import DataConversionWarning
 warnings.filterwarnings(action='ignore', category=DataConversionWarning)
 ####################################################################################
 import matplotlib
@@ -816,7 +816,7 @@ def draw_violinplot_hv(dft, dep, nums,chart_format, modeltype='Regression',
                 #print(title_string )
             conti = nums[i:new_end]
             ######################### Add Standard Scaling here ##################################
-            from autodsc.utils.sklearn.preprocessing import StandardScaler
+            from sklearn.preprocessing import StandardScaler
             SS = StandardScaler()
             data = pd.DataFrame(SS.fit_transform(dft[conti]),columns=conti)
             var_name = 'drawobjv_list['+str(counter)+']'
@@ -869,7 +869,7 @@ def draw_violinplot_hv(dft, dep, nums,chart_format, modeltype='Regression',
                     title_string = 'next %d variables' %(df_p.shape[1])
                 conti = nums[i:new_end]
                 ######################### Add Standard Scaling here ##################################
-                from autodsc.utils.sklearn.preprocessing import StandardScaler
+                from sklearn.preprocessing import StandardScaler
                 SS = StandardScaler()
                 data = pd.DataFrame(SS.fit_transform(dft[conti]),columns=conti)
                 data[dep] = dft[dep].values

@@ -26,7 +26,7 @@ warnings.warn = warn
 ########################################
 import warnings
 warnings.filterwarnings("ignore")
-from autodsc.utils.sklearn.exceptions import DataConversionWarning
+from sklearn.exceptions import DataConversionWarning
 warnings.filterwarnings(action='ignore', category=DataConversionWarning)
 ####################################################################################
 import matplotlib
@@ -56,7 +56,7 @@ import traceback
 import xgboost as xgb
 from xgboost.sklearn import XGBClassifier
 from xgboost.sklearn import XGBRegressor
-from autodsc.utils.sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split
 ##########################################################################################
 from ..autoviz.AutoViz_Holo import AutoViz_Holo
 from ..autoviz.AutoViz_Utils import *
