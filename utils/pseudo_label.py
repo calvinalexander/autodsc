@@ -11,6 +11,7 @@ class PseudoLabeler:
     sample_rate: Optional[float] = 0.5,
     confidence: Optional[float] = 0.5 
   ):
+    print('halo')
     self.df_train = df_train
     self.target = target
     self.sample_rate = sample_rate
@@ -18,10 +19,14 @@ class PseudoLabeler:
 
 
   def tabular(self, pseudo_label, X_test):
+    print('halo')
     pseudo_data = X_test.copy(deep=True)
     pseudo_data[self.target] = pseudo_label
     sampled_pseudo_data = pseudo_data.sample(frac=self.sample_rate)
-    augmented_train = pd.concat([sampled_pseudo_data, self.df_train])
+    print(sampled_pseudo_data.reset_index(drop=True))
+    print(self.df_train.reset_index(drop=True))
+    
+    augmented_train = pd.concat([sampled_pseudo_data.reset_index(drop=True), self.df_train.reset_index(drop=True)], ignore_index=True)
 
     return augmented_train
     
